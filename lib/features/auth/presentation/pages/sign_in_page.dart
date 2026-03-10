@@ -6,10 +6,10 @@ import "../cubits/auth_cubit.dart";
 
 /// Auth page with provider cubit and scaffold properties
 @RoutePage()
-class AuthPage extends StatelessWidget
+class SignInPage extends StatelessWidget
 {
   /// Auth page with provider cubit and scaffold properties
-  const AuthPage({super.key});
+  const SignInPage({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(

@@ -5,6 +5,11 @@ class RoutesNames {
   /// Contains all the routes of the application.
   RoutesNames._();
 
-  static const initial = "/";
-  static const home = "/home";
+  static const demonlist = "/";
+  static const login = "/login";
+  static const signin = "/signin";
+  static const guidelines = "/guidelines";
+  static const player = "/player";
+  static const submit = "/submit";
+  static const stats = "/stats";
 }

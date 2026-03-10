@@ -2,19 +2,19 @@ import "package:auto_route/auto_route.dart";
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 
-import "../blocs/demon_bloc.dart";
+import "../cubits/guidelines_cubit.dart";
 
-/// Demon page
+/// Guidelines page with his cubit and scaffold properties
 @RoutePage()
-class DemonPage extends StatelessWidget
+class GuidelinesPage extends StatelessWidget
 {
-  /// Demon page
-  const DemonPage({super.key});
+  /// Guidelines page with his cubit and scaffold properties
+  const GuidelinesPage({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
       body: BlocProvider(
-        create: (context) => DemonBloc(),
+        create: (context) => GuidelinesCubit(),
         child: const Center(
           child: Text("Created with clean arq brick"),
         ),
