@@ -5,7 +5,9 @@ class RoutesNames {
   /// Contains all the routes of the application.
   RoutesNames._();
 
-  static const demonlist = "/";
+  static const mainlist = "/";
+  static const extendedlist = "/extended";
+  static const legacylist = "/legacy";
   static const login = "/login";
   static const signin = "/signin";
   static const guidelines = "/guidelines";

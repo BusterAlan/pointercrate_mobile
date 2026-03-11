@@ -9,8 +9,16 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          page: DemonListRoute.page,
-          path: RoutesNames.demonlist,
+          page: MainListRoute.page,
+          path: RoutesNames.mainlist,
+        ),
+        AutoRoute(
+          page: ExtendedListRoute.page,
+          path: RoutesNames.extendedlist,
+        ),
+        AutoRoute(
+          page: LegacyListRoute.page,
+          path: RoutesNames.legacylist,
         ),
         AutoRoute(
           page: LogInRoute.page,
