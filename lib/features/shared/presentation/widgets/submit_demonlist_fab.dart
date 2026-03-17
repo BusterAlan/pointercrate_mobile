@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 
+import "../../../../core/extensions/theme_extension.dart";
+
 /// Submit demonlist custom floating action button to implement in whatever page needs
 class SubmitDemonlistFAB extends StatelessWidget {
   /// Submit demonlist custom floating action button to implement in whatever page needs
@@ -8,11 +10,17 @@ class SubmitDemonlistFAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FloatingActionButton(
-    onPressed: _onPressed,
-    child: const FaIcon(
-      FontAwesomeIcons.upload,
-    ),
-  );
+        onPressed: _onPressed,
+        shape: CircleBorder(
+          side: BorderSide(
+            style: BorderStyle.solid,
+            color: context.colorScheme.onPrimaryContainer,
+          ),
+        ),
+        child: const FaIcon(
+          FontAwesomeIcons.upload,
+        ),
+      );
 
   void _onPressed() {
     // TODO: Implement onPressed in custom FAB

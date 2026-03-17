@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 
+import "../../../../core/extensions/theme_extension.dart";
+
 /// Pointercrate demon list general app bar with his parameters
 class PointercrateAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -12,11 +14,14 @@ class PointercrateAppBar extends StatelessWidget
 
   @override
   Widget build(BuildContext context) => AppBar(
-        title: Text(title),
+        title: Text(
+          title,
+        ),
         leading: IconButton(
-          onPressed: _onDrawerPressed, 
-          icon: const FaIcon(
+          onPressed: _onDrawerPressed,
+          icon: FaIcon(
             FontAwesomeIcons.bars,
+            color: context.colorScheme.primary,
           ),
         ),
         actions: [

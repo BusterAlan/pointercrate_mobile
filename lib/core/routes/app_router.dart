@@ -11,6 +11,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(
           page: MainListRoute.page,
           path: RoutesNames.mainlist,
+          initial: true,
         ),
         AutoRoute(
           page: ExtendedListRoute.page,
