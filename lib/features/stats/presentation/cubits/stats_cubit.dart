@@ -1,6 +1,6 @@
 import "package:flutter_bloc/flutter_bloc.dart";
+import "package:flutter_common_classes/cubit_states/state_mixin.dart";
 
-import "../../../../core/cubit_states/state_mixin.dart";
 import "../../business/entities/stats_entity.dart";
 
 /// Stats cubit that contains a state mixin value of stats entity

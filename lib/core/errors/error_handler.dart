@@ -1,9 +1,8 @@
 import "package:dio/dio.dart";
+import "package:flutter_common_classes/errors/app_exception.dart";
+import "package:flutter_common_classes/errors/connection/http_call_exception.dart";
+import "package:flutter_common_classes/errors/failure.dart";
 import "package:fpdart/fpdart.dart";
-
-import "app_exception.dart";
-import "connection/http_call_exception.dart";
-import "failure.dart";
 
 /// The [ErrorHandler] class is responsible for handling the exceptions
 class ErrorHandler {
@@ -28,7 +27,10 @@ class ErrorHandler {
     } on EnvironmentException catch (_) {
       return Left(
         AppFailure.environment(
-          errorMessage: "Ocurrió un error al obtener las variables de entorno",
+          exception: EnvironmentException(
+            title: "EnvironmentException", 
+            message: "Ocurrió un error al obtener las variables de entorno",
+          ),
         ),
       );
     } catch (e) {

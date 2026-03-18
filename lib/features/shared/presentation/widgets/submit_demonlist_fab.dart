@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
+import "package:flutter_common_classes/extensions/theme_extension.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
-
-import "../../../../core/extensions/theme_extension.dart";
 
 /// Submit demonlist custom floating action button to implement in whatever page needs
 class SubmitDemonlistFAB extends StatelessWidget {

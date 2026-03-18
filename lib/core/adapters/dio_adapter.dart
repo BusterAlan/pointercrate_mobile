@@ -3,11 +3,10 @@ import "dart:async";
 import "package:dio/dio.dart";
 import "package:dio/io.dart";
 import "package:flutter/foundation.dart";
+import "package:flutter_common_classes/errors/connection/http_call_exception.dart";
+import "package:flutter_common_classes/extensions/num_extension.dart";
+import "package:flutter_common_classes/services/connection/network_info.dart";
 import "package:flutter_pretty_dio_logger/flutter_pretty_dio_logger.dart";
-
-import "../errors/connection/http_call_exception.dart";
-import "../extensions/num_extension.dart";
-import "../services/connection/network_info.dart";
 
 /// Adapter for the Dio client configured for the Pointercrate API.
 ///

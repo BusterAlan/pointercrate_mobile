@@ -1,13 +1,13 @@
+import "package:flutter_common_classes/constants/classes/use_case.dart";
+import "package:flutter_common_classes/errors/failure.dart";
 import "package:fpdart/fpdart.dart";
 
-import "../../../../core/constants/classes/use_case.dart";
-import "../../../../core/errors/failure.dart";
 import "../../data/models/params/stats_params.dart";
 import "../entities/stats_entity.dart";
 import "../repositories/stats_repository.dart";
 
 /// Get stats base use case
-class GetStats implements UseCase<StatsEntity, StatsParams> {
+class GetStats implements UseCaseAsync<StatsEntity, StatsParams> {
   /// Get stats base use case
   GetStats({required this.statsRepository});
 
@@ -19,6 +19,9 @@ class GetStats implements UseCase<StatsEntity, StatsParams> {
     required StatsParams params,
   }) {
     // TODO: implement call
-    throw UnimplementedError();    
+    throw UnimplementedError();
   }
+
+  @override
+  Failure? failure;
 }

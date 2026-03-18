@@ -1,4 +1,4 @@
-import "../../../../../core/constants/classes/params.dart";
+import "package:flutter_common_classes/constants/classes/params.dart";
 
 /// Parameters used to make the Player request.
 class PlayerParams extends Params {
@@ -7,7 +7,7 @@ class PlayerParams extends Params {
   
   @override
   Map<String, dynamic> headers() => {
-        "Authorization": "Bearer $accessToken",
+        "Authorization": "Bearer ", // TODO: Access token Impl
       };
 
   @override

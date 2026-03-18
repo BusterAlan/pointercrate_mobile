@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
+import "package:flutter_common_classes/config/environment_config.dart";
 
-import "core/config/dependency_injection.dart";
-import "core/config/environment_config.dart";
+import "core/config/pointercrate_dependency_injection.dart";
 import "pointercrate_mobile_app.dart";
 
 void main() async {
@@ -9,7 +9,7 @@ void main() async {
     flavor: Flavor.production,
   );
 
-  await DependencyInjection.init();
+  await PointercrateDependencyInjection.init();
 
   runApp(const PointercrateMobileApp());
 }

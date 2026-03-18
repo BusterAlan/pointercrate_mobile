@@ -1,16 +1,16 @@
+import "package:flutter_common_classes/constants/classes/use_case.dart";
+import "package:flutter_common_classes/errors/failure.dart";
 import "package:fpdart/fpdart.dart";
 
-import "../../../../core/constants/classes/use_case.dart";
-import "../../../../core/errors/failure.dart";
 import "../../data/models/params/guidelines_params.dart";
 import "../entities/guidelines_entity.dart";
 import "../repositories/guidelines_repository.dart";
 
 /// Get guidelines base use case
-class GetGuidelines implements UseCase<GuidelinesEntity, GuidelinesParams> {
+class GetGuidelines implements UseCaseAsync<GuidelinesEntity, GuidelinesParams> {
   /// Get guidelines base use case
   GetGuidelines({required this.guidelinesRepository});
-  
+
   /// Guidelines repository collection
   final GuidelinesRepository guidelinesRepository;
 
@@ -19,6 +19,9 @@ class GetGuidelines implements UseCase<GuidelinesEntity, GuidelinesParams> {
     required GuidelinesParams params,
   }) {
     // TODO: implement call
-    throw UnimplementedError();    
+    throw UnimplementedError();
   }
+
+  @override
+  Failure? failure;
 }

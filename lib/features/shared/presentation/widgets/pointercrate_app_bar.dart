@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
+import "package:flutter_common_classes/extensions/theme_extension.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
-
-import "../../../../core/extensions/theme_extension.dart";
 
 /// Pointercrate demon list general app bar with his parameters
 class PointercrateAppBar extends StatelessWidget
