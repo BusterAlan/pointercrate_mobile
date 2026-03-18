@@ -13,6 +13,7 @@ class PointercrateAppBar extends StatelessWidget
 
   @override
   Widget build(BuildContext context) => AppBar(
+        forceMaterialTransparency: true,
         title: Text(
           title,
         ),

@@ -4,7 +4,7 @@ import "package:flutter_common_classes/constants/classes/params.dart";
 class DemonParams extends Params {
   /// Parameters used to make the Demon request.
   DemonParams({this.limit = 50, this.after, this.before});
-  
+
   /// Limit value count for paginations
   final int? limit;
 
@@ -13,14 +13,13 @@ class DemonParams extends Params {
 
   /// Certain int value to set an index (left values for pagination)
   final int? before;
-  
-  @override
-  Map<String, dynamic> headers() => {
-        "Authorization": "Bearer ", // TODO: Access token impl
-      };
 
   @override
-  Map<String, dynamic>? queries() => null;
+  Map<String, dynamic>? queries() => {
+        if (limit != null) "limit": limit,
+        if (after != null) "after": after,
+        if (before != null) "before": before,
+      };
 
   @override
   Map<String, dynamic> body() => {};

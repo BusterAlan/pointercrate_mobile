@@ -26,6 +26,7 @@ dependencies:
     git: 
       url: https://github.com/BusterAlan/flutter_common_classes.git
       ref: main
+  dotted_border: ^3.1.0
 
 dev_dependencies:
   build_runner: ^2.4.11

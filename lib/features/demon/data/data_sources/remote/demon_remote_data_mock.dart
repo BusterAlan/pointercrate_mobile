@@ -18,7 +18,7 @@ class DemonRemoteDataMock extends MockDataSource
   Future<List<DemonModel>> getDemons() async {
     final List<DemonModel> demons = List.generate(
       faker.randomGenerator.integer(150), 
-      (index) => DemonFaker(index).mockData(),
+      (_) => DemonFaker().mockData(),
     );
 
     await awaitableMethod();
