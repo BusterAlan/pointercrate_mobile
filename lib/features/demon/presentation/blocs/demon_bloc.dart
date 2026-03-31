@@ -2,7 +2,7 @@ import "package:equatable/equatable.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_common_classes/flutter_common_classes.dart";
 
-import "../../business/entities/demon_entity.dart";
+import "../../business/entities/demon_listed_form_entity.dart";
 import "../../business/use_cases/get_demons.dart";
 
 part "demon_event.dart";

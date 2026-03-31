@@ -11,7 +11,7 @@ class DemonState extends Equatable {
   });
 
   /// Demon list values
-  final List<DemonEntity> demons;
+  final List<DemonListedFormEntity> demons;
 
   /// Status of the demon list
   final DemonStatus status;
@@ -27,7 +27,7 @@ class DemonState extends Equatable {
 
   /// Copy with method state
   DemonState copyWith({
-    List<DemonEntity>? demons,
+    List<DemonListedFormEntity>? demons,
     DemonStatus? status,
     Failure? failure,
     bool? hasReachedMax,
@@ -43,11 +43,14 @@ class DemonState extends Equatable {
 /// Enum for demon states
 enum DemonStatus {
   /// Initial demon state
-  initial, 
+  initial,
+
   /// Loading demon state
-  loading, 
+  loading,
+
   /// Success demon state
   success,
+
   /// Failure demon state
   failure,
 }
