@@ -9,6 +9,7 @@ import "../../../shared/presentation/widgets/submit_demonlist_fab.dart";
 import "../../business/use_cases/get_demons.dart";
 import "../blocs/demon_bloc.dart";
 import "../widgets/demon_card.dart";
+import "../widgets/drawers/pointercrate_drawer.dart";
 
 /// Main list page with his cubit and scaffold properties
 @RoutePage()
@@ -21,6 +22,7 @@ class MainListPage extends StatelessWidget {
         appBar: const PointercrateAppBar(
           title: "Main list",
         ),
+        drawer: const PointercrateDrawer(),
         body: Padding(
           padding: AppSeparators.pageSeparator,
           child: BlocProvider(

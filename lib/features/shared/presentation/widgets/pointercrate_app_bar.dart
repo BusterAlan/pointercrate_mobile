@@ -1,3 +1,4 @@
+import "package:auto_route/auto_route.dart";
 import "package:flutter/material.dart";
 import "package:flutter_common_classes/extensions/theme_extension.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
@@ -6,10 +7,13 @@ import "package:font_awesome_flutter/font_awesome_flutter.dart";
 class PointercrateAppBar extends StatelessWidget
     implements PreferredSizeWidget {
   /// Pointercrate demon list general app bar with his parameters
-  const PointercrateAppBar({required this.title, super.key});
+  const PointercrateAppBar({required this.title, this.actionWidget, super.key});
 
   /// Title string property
   final String title;
+
+  /// Optional widget to show in action part
+  final Widget? actionWidget;
 
   @override
   Widget build(BuildContext context) => AppBar(
@@ -18,19 +22,22 @@ class PointercrateAppBar extends StatelessWidget
           title,
         ),
         leading: IconButton(
-          onPressed: _onDrawerPressed,
+          onPressed: () => _onLeadingPressed(context),
           icon: FaIcon(
-            FontAwesomeIcons.bars,
+            context.router.canPop()
+                ? FontAwesomeIcons.caretLeft
+                : FontAwesomeIcons.bars,
             color: context.colorScheme.primary,
           ),
         ),
         actions: [
-          IconButton(
-            icon: const FaIcon(
-              FontAwesomeIcons.user,
-            ),
-            onPressed: _onUserPressed,
-          ),
+          actionWidget ??
+              IconButton(
+                icon: const FaIcon(
+                  FontAwesomeIcons.user,
+                ),
+                onPressed: _onUserPressed,
+              ),
         ],
       );
 
@@ -41,7 +48,11 @@ class PointercrateAppBar extends StatelessWidget
     // TODO: Implement onUserPressed
   }
 
-  void _onDrawerPressed() {
-    // TODO: Implement onDrawerPressed
+  void _onLeadingPressed(BuildContext context) {
+    if (context.router.canPop()) {
+      context.router.pop();
+    } else {
+      Scaffold.of(context).openDrawer();
+    }
   }
 }
