@@ -81,7 +81,6 @@ linter:
     null_closures: true
     one_member_abstracts: true
     only_throw_errors: true
-    package_api_docs: true
     parameter_assignments: true
     prefer_adjacent_string_concatenation: true
     prefer_collection_literals: true
@@ -158,13 +157,15 @@ linter:
     use_to_and_as_if_applicable: true
 
 analyzer:
-  #   exclude:
-  #     - '**.freezed.dart'
-  #     - '**.g.dart'
-  #     - '**.gen.dart'
-  #     - '**/generated_plugin_registrant.dart'
+  exclude:
+    - '**.freezed.dart'
+    - '**.g.dart'
+    - '**.gen.dart'
+    - '**/generated_plugin_registrant.dart'
   plugins:
     - dart_code_linter
+  errors:
+    invalid_annotation_target: ignore
 
 dart_code_linter:
   anti-patterns:

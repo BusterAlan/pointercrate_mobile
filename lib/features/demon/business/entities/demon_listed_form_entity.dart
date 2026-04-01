@@ -1,5 +1,7 @@
 import "package:equatable/equatable.dart";
 
+import "player_minimal_form_entity.dart";
+
 /// Entity that contains the data of the Demon in his form listed
 class DemonListedFormEntity extends Equatable {
   /// Entity that contains the data of the Demon in his form listed
@@ -24,10 +26,10 @@ class DemonListedFormEntity extends Equatable {
   final int id;
 
   /// Demon publisher within the game
-  final String publisher; // TODO: Change into player object
+  final PlayerMinimalFormEntity publisher;
 
   /// Demon verifier, player who beats the level to upload into the GD servers
-  final String verifier; // TODO: Change into player object
+  final PlayerMinimalFormEntity verifier;
 
   /// Demon verification video value
   final Uri? video;

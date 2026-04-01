@@ -33,7 +33,7 @@ import 'package:pointercrate_mobile/features/stats/presentation/pages/stats_page
 /// [_i1.ExtendedListPage]
 class ExtendedListRoute extends _i10.PageRouteInfo<void> {
   const ExtendedListRoute({List<_i10.PageRouteInfo>? children})
-      : super(ExtendedListRoute.name, initialChildren: children);
+    : super(ExtendedListRoute.name, initialChildren: children);
 
   static const String name = 'ExtendedListRoute';
 
@@ -49,7 +49,7 @@ class ExtendedListRoute extends _i10.PageRouteInfo<void> {
 /// [_i2.GuidelinesPage]
 class GuidelinesRoute extends _i10.PageRouteInfo<void> {
   const GuidelinesRoute({List<_i10.PageRouteInfo>? children})
-      : super(GuidelinesRoute.name, initialChildren: children);
+    : super(GuidelinesRoute.name, initialChildren: children);
 
   static const String name = 'GuidelinesRoute';
 
@@ -65,7 +65,7 @@ class GuidelinesRoute extends _i10.PageRouteInfo<void> {
 /// [_i3.LegacyListPage]
 class LegacyListRoute extends _i10.PageRouteInfo<void> {
   const LegacyListRoute({List<_i10.PageRouteInfo>? children})
-      : super(LegacyListRoute.name, initialChildren: children);
+    : super(LegacyListRoute.name, initialChildren: children);
 
   static const String name = 'LegacyListRoute';
 
@@ -81,7 +81,7 @@ class LegacyListRoute extends _i10.PageRouteInfo<void> {
 /// [_i4.LogInPage]
 class LogInRoute extends _i10.PageRouteInfo<void> {
   const LogInRoute({List<_i10.PageRouteInfo>? children})
-      : super(LogInRoute.name, initialChildren: children);
+    : super(LogInRoute.name, initialChildren: children);
 
   static const String name = 'LogInRoute';
 
@@ -97,7 +97,7 @@ class LogInRoute extends _i10.PageRouteInfo<void> {
 /// [_i5.MainListPage]
 class MainListRoute extends _i10.PageRouteInfo<void> {
   const MainListRoute({List<_i10.PageRouteInfo>? children})
-      : super(MainListRoute.name, initialChildren: children);
+    : super(MainListRoute.name, initialChildren: children);
 
   static const String name = 'MainListRoute';
 
@@ -113,7 +113,7 @@ class MainListRoute extends _i10.PageRouteInfo<void> {
 /// [_i6.PlayerDetailsPage]
 class PlayerDetailsRoute extends _i10.PageRouteInfo<void> {
   const PlayerDetailsRoute({List<_i10.PageRouteInfo>? children})
-      : super(PlayerDetailsRoute.name, initialChildren: children);
+    : super(PlayerDetailsRoute.name, initialChildren: children);
 
   static const String name = 'PlayerDetailsRoute';
 
@@ -129,7 +129,7 @@ class PlayerDetailsRoute extends _i10.PageRouteInfo<void> {
 /// [_i7.SignInPage]
 class SignInRoute extends _i10.PageRouteInfo<void> {
   const SignInRoute({List<_i10.PageRouteInfo>? children})
-      : super(SignInRoute.name, initialChildren: children);
+    : super(SignInRoute.name, initialChildren: children);
 
   static const String name = 'SignInRoute';
 
@@ -145,7 +145,7 @@ class SignInRoute extends _i10.PageRouteInfo<void> {
 /// [_i8.StatsPage]
 class StatsRoute extends _i10.PageRouteInfo<void> {
   const StatsRoute({List<_i10.PageRouteInfo>? children})
-      : super(StatsRoute.name, initialChildren: children);
+    : super(StatsRoute.name, initialChildren: children);
 
   static const String name = 'StatsRoute';
 
@@ -161,7 +161,7 @@ class StatsRoute extends _i10.PageRouteInfo<void> {
 /// [_i9.SubmitRecordPage]
 class SubmitRecordRoute extends _i10.PageRouteInfo<void> {
   const SubmitRecordRoute({List<_i10.PageRouteInfo>? children})
-      : super(SubmitRecordRoute.name, initialChildren: children);
+    : super(SubmitRecordRoute.name, initialChildren: children);
 
   static const String name = 'SubmitRecordRoute';
 

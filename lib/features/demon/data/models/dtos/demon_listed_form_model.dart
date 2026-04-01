@@ -1,6 +1,7 @@
 import "dart:convert";
 
 import "../../../business/entities/demon_listed_form_entity.dart";
+import "player_minimal_form_model.dart";
 
 /// Model that transforms the Demon data from the API to the
 /// application entity
@@ -30,10 +31,8 @@ class DemonListedFormModel extends DemonListedFormEntity {
   ) =>
       DemonListedFormModel(
         name: map["name"] as String,
-        verifier:
-            map["verifier"] as String, // TODO: Change into the Player cast
-        publisher:
-            map["publisher"] as String, // TODO: Change into the Player cast
+        verifier: PlayerMinimalFormModel.fromJson(map["verifier"]),
+        publisher: PlayerMinimalFormModel.fromJson(map["publisher"]),
         thumbnail: map["thumbnail"] as String,
         id: map["id"] as int,
         levelId: map["level_id"] as int?,

@@ -29,7 +29,7 @@ class DemonCard extends StatelessWidget {
                 style: context.textTheme.bodyMedium,
                 children: [
                   TextSpan(
-                    text: demon.publisher,
+                    text: demon.publisher.name,
                     style: context.textTheme.bodyMedium?.copyWith(
                       decoration: TextDecoration.underline,
                       decorationColor: context.colorScheme.onSurface,
