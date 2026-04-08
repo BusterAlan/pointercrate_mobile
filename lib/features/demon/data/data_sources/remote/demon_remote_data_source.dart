@@ -18,8 +18,15 @@ class DemonRemoteDataSourceImpl implements DemonRemoteDataSource {
   final DioAdapter dio;
 
   @override
-  Future<List<DemonListedFormModel>> getDemons() {
-    // TODO: implement getDemons
-    throw UnimplementedError();
+  Future<List<DemonListedFormModel>> getDemons() async {
+    final response = await dio.get(
+      "/listed"
+    );
+
+    return (response.data as List).map(
+      (e) => DemonListedFormModel.fromJson(
+        e as Map<String, dynamic>
+      ),
+    ).toList();
   }
 }

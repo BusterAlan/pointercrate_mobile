@@ -1,4 +1,6 @@
+import "package:device_preview_plus/device_preview_plus.dart";
 import "package:flutter/material.dart";
+import "package:flutter_common_classes/localization/l10n.dart";
 import "package:flutter_flavor/flutter_flavor.dart";
 
 import "core/constants/theme/material_theme.dart";
@@ -17,7 +19,12 @@ class PointercrateMobileApp extends StatelessWidget {
      FlavorBanner(
       child: MaterialApp.router(
         title: "PointercrateMobile",
+        locale: DevicePreview.locale(context),
+        builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
+        localizationsDelegates: const [
+          FlutterCommonLocalizations.delegate,
+        ],
 
         //Theming  
         themeMode: ThemeMode.system,

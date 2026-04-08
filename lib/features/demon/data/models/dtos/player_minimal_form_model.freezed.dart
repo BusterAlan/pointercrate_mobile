@@ -28,13 +28,17 @@ $PlayerMinimalFormModelCopyWith<PlayerMinimalFormModel> get copyWith => _$Player
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlayerMinimalFormModel&&super == other&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.banned, banned) || other.banned == banned));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlayerMinimalFormModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.banned, banned) || other.banned == banned));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,super.hashCode,id,name,banned);
+int get hashCode => Object.hash(runtimeType,id,name,banned);
 
+@override
+String toString() {
+  return 'PlayerMinimalFormModel(id: $id, name: $name, banned: $banned)';
+}
 
 
 }
@@ -206,8 +210,8 @@ return $default(_that.id,_that.name,_that.banned);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _PlayerMinimalFormModel extends PlayerMinimalFormModel {
-  const _PlayerMinimalFormModel({required this.id, required this.name, required this.banned}): super._();
+class _PlayerMinimalFormModel implements PlayerMinimalFormModel {
+  const _PlayerMinimalFormModel({required this.id, required this.name, required this.banned});
   factory _PlayerMinimalFormModel.fromJson(Map<String, dynamic> json) => _$PlayerMinimalFormModelFromJson(json);
 
 @override final  int id;
@@ -227,13 +231,17 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PlayerMinimalFormModel&&super == other&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.banned, banned) || other.banned == banned));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PlayerMinimalFormModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.banned, banned) || other.banned == banned));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,super.hashCode,id,name,banned);
+int get hashCode => Object.hash(runtimeType,id,name,banned);
 
+@override
+String toString() {
+  return 'PlayerMinimalFormModel(id: $id, name: $name, banned: $banned)';
+}
 
 
 }

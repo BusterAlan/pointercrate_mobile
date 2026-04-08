@@ -1,6 +1,7 @@
 import "package:auto_route/auto_route.dart";
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
+import "package:flutter_common_classes/flutter_common_classes.dart";
 import "package:get_it/get_it.dart";
 
 import "../../../../core/constants/app_separators.dart";
@@ -19,31 +20,46 @@ class MainListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: const PointercrateAppBar(
-          title: "Main list",
-        ),
-        drawer: const PointercrateDrawer(),
-        body: Padding(
-          padding: AppSeparators.pageSeparator,
-          child: BlocProvider(
-            create: (context) => DemonBloc(
-              getDemons: GetIt.I<GetDemons>(),
-            )..add(const DemonListFetched()),
-            child: BlocBuilder<DemonBloc, DemonState>(
-              builder: (context, state) => switch (state.status) {
-                DemonStatus.initial ||
-                DemonStatus.loading =>
-                  const Center(child: CircularProgressIndicator()),
-                DemonStatus.failure =>
-                  Center(child: Text(state.failure?.message ?? "Error")),
-                DemonStatus.success => ListView.builder(
-                    itemCount: state.demons.length,
-                    itemBuilder: (_, i) => DemonCard(demon: state.demons[i]),
-                  ),
-              },
+    appBar: const PointercrateAppBar(title: "Main list"),
+    drawer: const PointercrateDrawer(),
+    body: Padding(
+      padding: AppSeparators.pageSeparator,
+      child: BlocProvider(
+        create: (context) =>
+            DemonBloc(getDemons: GetIt.I<GetDemons>())
+              ..add(const DemonListFetched()),
+        child: BlocBuilder<DemonBloc, DemonState>(
+          builder: (context, state) => switch (state.status) {
+            DemonStatus.initial || DemonStatus.loading => const Center(
+              child: CircularProgressIndicator(),
             ),
-          ),
+            DemonStatus.failure => Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  state.failure?.title ?? "N/A",
+                  style: context.textTheme.headlineMedium?.copyWith(
+                    color: context.colorScheme.error.darken(),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  state.failure?.message ?? "No failure description provided",
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    color: context.colorScheme.error,
+                  ),
+                ),
+              ],
+            ),
+            DemonStatus.success => ListView.builder(
+              itemCount: state.demons.length,
+              itemBuilder: (_, i) => DemonCard(demon: state.demons[i]),
+            ),
+          },
         ),
-        floatingActionButton: const SubmitDemonlistFAB(),
-      );
+      ),
+    ),
+    floatingActionButton: const SubmitDemonlistFAB(),
+  );
 }

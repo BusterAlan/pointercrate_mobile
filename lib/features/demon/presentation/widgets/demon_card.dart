@@ -14,41 +14,33 @@ class DemonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Card(
-        child: DottedBorder(
-          options: RectDottedBorderOptions(
-            color: context.colorScheme.onSurface,
-          ),
-          child: ListTile(
-            title: Text(
-              "${demon.position} - ${demon.name}",
-              style: context.textTheme.titleMedium,
-            ),
-            subtitle: Text.rich(
+    child: DottedBorder(
+      options: RectDottedBorderOptions(color: context.colorScheme.onSurface),
+      child: ListTile(
+        title: Text(
+          "#${demon.position} - ${demon.name}",
+          style: context.textTheme.titleMedium,
+        ),
+        subtitle: Text.rich(
+          TextSpan(
+            text: "published by ",
+            style: context.textTheme.bodyMedium,
+            children: [
               TextSpan(
-                text: "published by ",
-                style: context.textTheme.bodyMedium,
-                children: [
-                  TextSpan(
-                    text: demon.publisher.name,
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      decoration: TextDecoration.underline,
-                      decorationColor: context.colorScheme.onSurface,
-                    ),
-                  ),
-                ],
+                text: demon.publisher.name,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  decoration: TextDecoration.underline,
+                  decorationColor: context.colorScheme.onSurface,
+                ),
               ),
-            ),
-            leading: SizedBox(
-              width: 117,
-              height: 66,
-              child: ColoredBox(
-                color: context.colorScheme.secondaryContainer,
-              ),
-            ),
-            onTap: _onTap,
+            ],
           ),
         ),
-      );
+        leading: Image.network(demon.thumbnail, height: 66, width: 117),
+        onTap: _onTap,
+      ),
+    ),
+  );
 
   void _onTap() {
     // TODO: Implement onTap in demon card

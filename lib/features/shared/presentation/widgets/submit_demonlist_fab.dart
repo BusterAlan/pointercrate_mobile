@@ -13,20 +13,17 @@ class SubmitDemonlistFAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => DottedBorder(
-        options: CircularDottedBorderOptions(
-          color: context.colorScheme.onPrimaryContainer,
-        ),
-        child: FloatingActionButton(
-          onPressed: () => _onPressed(context),
-          shape: const CircleBorder(),
-          child: const FaIcon(
-            FontAwesomeIcons.upload,
-          ),
-        ),
-      );
+    options: CircularDottedBorderOptions(
+      color: context.colorScheme.onPrimaryContainer,
+    ),
+    child: FloatingActionButton(
+      onPressed: () => _onPressed(context),
+      shape: const CircleBorder(),
+      child: const FaIcon(FontAwesomeIcons.upload),
+    ),
+  );
 
   void _onPressed(BuildContext context) {
-    // TODO: Change into the form view to add record
-    context.router.push(const LegacyListRoute());
+    // TODO: Record form view
   }
 }

@@ -30,5 +30,5 @@ class DemonListedFormFaker implements MockModel<DemonListedFormModel> {
         video: faker.randomGenerator.boolean() ? null : _uriFaker(),
       );
 
-  Uri _uriFaker() => Uri.parse(faker.internet.httpsUrl());
+  String _uriFaker() => faker.internet.httpsUrl();
 }
